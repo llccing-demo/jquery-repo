@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Noty</title>
+  <link rel="stylesheet" href="./node_modules/noty/lib/noty.css">
+  <link rel="stylesheet" href="./node_modules/noty/lib/themes/nest.css">
+  <script src="./node_modules/noty/lib/noty.min.js"></script>
+</head>
+
+<body>
+  <button id="alert">alert</button> |
+  <button id="success">success</button> |
+  <button id="warning">warning</button> |
+  <button id="error">error</button> |
+  <button id="info">info</button>
+
+  <script>
+    document.querySelector('#alert').addEventListener('click', () => { show('alert', 'Some notification text') })
+    document.querySelector('#success').addEventListener('click', () => { show('success', 'Some notification text') })
+    document.querySelector('#warning').addEventListener('click', () => { show('warning', 'Some notification text') })
+    document.querySelector('#error').addEventListener('click', () => { show('error', 'Some notification text') })
+    document.querySelector('#info').addEventListener('click', () => { show('info', 'Some notification text') })
+
+    function show(type, text, theme = 'nest') {
+      new Noty({
+        theme: 'nest',
+        type,
+        text,
+      }).show();
+    }
+  </script>
+</body>
+
+</html>
